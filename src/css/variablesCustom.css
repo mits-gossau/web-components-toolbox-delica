@@ -81,6 +81,7 @@
   --hr-secondary-opacity: 1;
   --navigation-default-a-link-line-height-mobile: 1.5;
   --navigation-default-a-link-line-height: 1.5;
+  /* --navigation-default-background-color: #ECECE8; */
   --navigation-default-color-custom: var(--color-secondary);
   --navigation-default-color-mobile-custom: var(--navigation-default-color-second-level-custom);
   --navigation-default-color-second-level-custom: var(--color);
