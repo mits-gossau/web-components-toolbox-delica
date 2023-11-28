@@ -179,7 +179,6 @@ export default class Yearcarousel extends Shadow() {
           
           
           }
-          
           .year-swiper{
             font-size: x-large;
             display: flex;

@@ -3,6 +3,13 @@ import { Shadow } from '../../web-components-toolbox/src/es/components/prototype
 export default class TeaserFE extends Shadow() {
     connectedCallback() {
         if (this.shouldRenderCSS()) this.renderCSS()
+        const imageholder = this.root.querySelector(".image");
+
+        imageholder.addEventListener("click", (event) => {
+            console.log(event);
+        });
+        
+        
     }
 
     shouldRenderCSS() {
@@ -125,6 +132,11 @@ export default class TeaserFE extends Shadow() {
         
         .image:hover a-picture {
             filter: grayscale(100%);
+        }
+
+        a{
+            text-decoration-line: none;
+            color: white;
         }
         `
 
