@@ -1,25 +1,21 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class TeaserFE extends Shadow() {
-    connectedCallback() {
-        if (this.shouldRenderCSS()) this.renderCSS()
-        const imageholder = this.root.querySelector(".image");
+  connectedCallback () {
+    if (this.shouldRenderCSS()) this.renderCSS()
+    const imageholder = this.root.querySelector('.image')
 
-        imageholder.addEventListener("click", (event) => {
-            console.log(event);
-        });
-        
-        
-    }
+    imageholder.addEventListener('click', (event) => {
+      console.log(event)
+    })
+  }
 
-    shouldRenderCSS() {
-        return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
+  shouldRenderCSS () {
+    return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
+  }
 
-    }
-
-    renderCSS() {
-
-        this.css = /* css */`
+  renderCSS () {
+    this.css = /* css */`
 
         :host {
             width: 100vw;
@@ -139,8 +135,5 @@ export default class TeaserFE extends Shadow() {
             color: white;
         }
         `
-
-
-    }
-
+  }
 }
