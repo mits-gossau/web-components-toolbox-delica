@@ -75,11 +75,13 @@
   --header-default-a-logo-top-mobile-custom: -0.5em;
   --header-default-a-menu-icon-background-color-custom: var(--color-secondary);
   --header-default-background-color-custom: var(--background-color);
+  --header-default-content-width: max(calc(1200px - var(--content-spacing) * 2), 85%);
   --header-default-logo-width-custom: min(9em, 138px);
   --hr-border-bottom: 2px dotted var(--m-gray-600);
   --hr-border-width: 0 0 2px;
   --hr-secondary-border-bottom: 2px solid var(--color-secondary);
   --hr-secondary-opacity: 1;
+  --language-switcher-default-content-width: var(--header-default-content-width);
   --navigation-default-a-link-line-height-mobile: 1.5;
   --navigation-default-a-link-line-height: 1.5;
   /* --navigation-default-background-color: #ECECE8; */
@@ -94,5 +96,4 @@
   --teaser-round-figcaption-color: var(--color-secondary);
   --teaser-tile-rounded-h6-figcaption-color-custom: var(--color-secondary);
   --title-border-display: none;
-  --language-switcher-default-content-width: var(--header-default-content-width);
 }
