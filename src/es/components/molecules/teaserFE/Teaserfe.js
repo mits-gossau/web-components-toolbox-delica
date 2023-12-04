@@ -24,6 +24,8 @@ export default class TeaserFE extends Shadow() {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 5%; 
+
         }
     
         .column-left {
@@ -56,6 +58,7 @@ export default class TeaserFE extends Shadow() {
             width: 100%;
             display: flex;
             flex-direction: column;
+    
         }
     
         
@@ -121,13 +124,19 @@ export default class TeaserFE extends Shadow() {
             background: none;
         }
         .image:hover {
-            color: rgb(214, 169, 88);
             cursor: pointer;
             opacity: 1;
+        
+        }
+
+        .image:hover .title{
+            color: rgb(214, 169, 88);
+
         }
         
         .image:hover a-picture {
             filter: grayscale(100%);
+
         }
 
         a{
