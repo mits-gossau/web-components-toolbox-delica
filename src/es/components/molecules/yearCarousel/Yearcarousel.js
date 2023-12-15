@@ -12,7 +12,7 @@ export default class Yearcarousel extends Shadow() {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
 
     this.yearSwiper = this.root.querySelector('.year-swiper')
-    this.yearCarouselComponent = this.root.querySelector('.component-conatiner')
+    this.yearCarouselComponent = this.root.querySelector('.component-container')
     this.yearlist = Array.from(this.root.querySelectorAll('.swipe'))
     this.slides = this.root.querySelectorAll('.slide')
     this.swipes = this.root.querySelectorAll('.swipe')
@@ -97,7 +97,7 @@ export default class Yearcarousel extends Shadow() {
             --svg-size: 3em;
           }
 
-          .component-conatiner{
+          .component-container{
             display: flex;
             justify-content: center;
             align-items: center;
