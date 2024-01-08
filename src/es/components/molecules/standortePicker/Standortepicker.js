@@ -24,6 +24,7 @@ export default class StandortePicker extends Shadow() {
     m-tabs{
       --background-color: rgb(224, 177, 92);
       --color-active: rgb(224, 177, 92);
+
     }
 
     m-tabs .tab-content{
@@ -54,6 +55,13 @@ export default class StandortePicker extends Shadow() {
   }
 
   @media only screen and (max-width: 768px) {      
+    :host{
+      overflow: hidden;
+    }
+    m-tabs{
+      --tab-justify-content: space-around;
+
+    }
 
   }
 
