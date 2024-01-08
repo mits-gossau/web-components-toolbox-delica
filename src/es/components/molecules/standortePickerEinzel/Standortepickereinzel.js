@@ -1,14 +1,14 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class StandortePickerEinzel extends Shadow() {
-  constructor(options = {}, ...args) {
+  constructor (options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
     this.hotspots = this.root.querySelectorAll('a-hotspot')
     this.descriptions = this.root.querySelectorAll('.description')
     this.currentDescription = this.root.querySelector(".description[id='1']")
   }
 
-  connectedCallback() {
+  connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
 
     this.setCurrentDescription()
@@ -18,7 +18,7 @@ export default class StandortePickerEinzel extends Shadow() {
     })
   }
 
-  setCurrentDescription(event) {
+  setCurrentDescription (event) {
     if (event != null) {
       this.currentDescription.classList.remove('active')
       this.descriptions.forEach(desc => {
@@ -32,11 +32,11 @@ export default class StandortePickerEinzel extends Shadow() {
     }
   }
 
-  shouldRenderCSS() {
+  shouldRenderCSS () {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  renderCSS() {
+  renderCSS () {
     this.css = /* css */`
 
     :host{

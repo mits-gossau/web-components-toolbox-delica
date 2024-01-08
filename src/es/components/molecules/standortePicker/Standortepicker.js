@@ -15,24 +15,19 @@ export default class StandortePicker extends Shadow() {
 
     :host{
       width: 100%;
-      height: 70vh;
+      height: 100%;
 
       --display-active: flex;
-
     }
-
     m-tabs{
-      --background-color: rgb(224, 177, 92);
-      --color-active: rgb(224, 177, 92);
+      --background-color: var(--color-secondary);
+      --color-active: var(--color-tertiary);
 
     }
-
     m-tabs .tab-content{
       justify-content: space-evenly;
 
     }
-    
-  
     .left-container{
       width: 60%;
       height: 100%;
