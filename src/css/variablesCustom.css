@@ -61,6 +61,7 @@
   --font-family-secondary: KalamRegular, Avenir35Light, sans-serif;
   --font-family: FrutigerRegular, HelveticaNowText, Helvetica, Arial, sans-serif;
  --footer-default-text-decoration: none; 
+ --footer-default-a-text-decoration: none;
  --footer-default-h4-color: var(--background-color);
   --footer-default-invert-a-color-hover-custom: var(--color-tertiary);
   --footer-default-invert-color-hover-custom: var(--color-tertiary);
