@@ -1,6 +1,6 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
-export default class Yearcarousel extends Shadow() {
+export default class YearCarousel extends Shadow() {
   yearSwiper
   yearCarouselComponent
   yearlist
