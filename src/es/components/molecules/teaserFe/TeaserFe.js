@@ -117,6 +117,12 @@ export default class TeaserFe extends Shadow() {
             box-sizing: border-box;
             background: none;
         }
+        .image a-picture, .title{
+            transition: 0.5s;
+
+        }
+
+        
         .image:hover {
             cursor: pointer;
             opacity: 1;

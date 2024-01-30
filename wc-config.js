@@ -169,7 +169,7 @@
   // ↓↓↓ adjustable ↓↓↓
   './src/es/components/', // baseUrl
   [
-    
+
     {
       selector: 'a-',
       url: 'web-components-toolbox/src/es/components/atoms/',
