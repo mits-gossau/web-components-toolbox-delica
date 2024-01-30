@@ -201,8 +201,8 @@ export default class EmotionCarousel extends Shadow() {
           width: 100%
         }
        :host .slide-description{
-          max-width: 70%;
-          left: 20%;
+          max-width: 80%;
+          left: 10%;
           padding: 0px;
         
         }
