@@ -206,6 +206,33 @@ export default class YearCarousel extends Shadow() {
             color: rgb(173, 142, 86);
             font-weight: bold; 
           }
+
+          @media only screen and (max-width: 1000px) {
+            :host{
+              height: 70vh;
+              --svg-size: 2em;
+
+            }
+          }
+
+          @media only screen and (max-width: 767px) {
+            :host{
+              height: 100vh;
+              --svg-size: 2em;
+
+            }
+          }
+
+          @media only screen and (max-width: 500px) {
+            :host{
+              height: 70vh;
+              --svg-size: 2em;
+
+            }
+          }
+
+
+
           
         `
   }

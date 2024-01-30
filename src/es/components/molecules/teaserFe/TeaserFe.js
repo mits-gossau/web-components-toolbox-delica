@@ -20,12 +20,6 @@ export default class TeaserFe extends Shadow() {
         :host {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 5%; 
-
         }
     
         .column-left {
@@ -63,13 +57,13 @@ export default class TeaserFe extends Shadow() {
     
         
         .w {
-            width: 1em;
+            width: 2vh;
             height: 100%;
         }
     
         .h {
             width: 100%;
-            height: 1vh;
+            height: 2vw;
         }
         
         .sub {
@@ -105,7 +99,7 @@ export default class TeaserFe extends Shadow() {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 2%;
+            margin-bottom: 2vh;
         }
         .big-image {
             height: 100%;
@@ -142,6 +136,13 @@ export default class TeaserFe extends Shadow() {
         a{
             text-decoration-line: none;
             color: white;
+        }
+
+
+        @media only screen and (max-width: 767px){
+            .title{
+                font-size: large;
+            }
         }
         `
   }
