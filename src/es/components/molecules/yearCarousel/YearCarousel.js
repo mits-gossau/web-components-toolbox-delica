@@ -92,7 +92,7 @@ export default class YearCarousel extends Shadow() {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            height: fit-content;
             margin: 0; 
             --svg-size: 3em;
           }
@@ -103,9 +103,8 @@ export default class YearCarousel extends Shadow() {
             align-items: center;
             flex-direction: column;
             width: 100%;
-            height: 60%;
+            height: 70vh;
             overflow: hidden;
-          
           }
           
           .carousel-container {
@@ -154,8 +153,6 @@ export default class YearCarousel extends Shadow() {
             box-sizing: border-box;
             bottom: 0; 
           }
-          
-
           
           .btn {
             padding: 2%;
@@ -209,7 +206,6 @@ export default class YearCarousel extends Shadow() {
 
           @media only screen and (max-width: 1000px) {
             :host{
-              height: 70vh;
               --svg-size: 2em;
 
             }
@@ -217,7 +213,6 @@ export default class YearCarousel extends Shadow() {
 
           @media only screen and (max-width: 767px) {
             :host{
-              height: 100vh;
               --svg-size: 2em;
 
             }
@@ -225,8 +220,7 @@ export default class YearCarousel extends Shadow() {
 
           @media only screen and (max-width: 500px) {
             :host{
-              height: 70vh;
-              --svg-size: 2em;
+              --svg-size: 1.5em;
 
             }
           }
