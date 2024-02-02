@@ -100,11 +100,5 @@
   --teaser-tile-rounded-h6-figcaption-color-custom: var(--color-secondary);
   --title-border-display: none;
   --h-border-after: true;
-  --h-border-after-width: 5%;
-  --h-border-after-height: 3px;
-  --h-border-after-space-left: calc(50% - 2.5%);
-  --h-border-after-margin-top: 0.5em;
-  --h-border-after-text-align: center;
-
 
 }
