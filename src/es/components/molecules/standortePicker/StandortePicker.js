@@ -3,7 +3,6 @@ import { Shadow } from '../../web-components-toolbox/src/es/components/prototype
 export default class StandortePicker extends Shadow() {
   connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
-    console.log('connected')
   }
 
   shouldRenderCSS () {
