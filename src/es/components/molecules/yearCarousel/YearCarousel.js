@@ -1,6 +1,6 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
-export default class Yearcarousel extends Shadow() {
+export default class YearCarousel extends Shadow() {
   yearSwiper
   yearCarouselComponent
   yearlist
@@ -92,7 +92,7 @@ export default class Yearcarousel extends Shadow() {
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            height: fit-content;
             margin: 0; 
             --svg-size: 3em;
           }
@@ -103,9 +103,8 @@ export default class Yearcarousel extends Shadow() {
             align-items: center;
             flex-direction: column;
             width: 100%;
-            height: 60%;
+            height: 70vh;
             overflow: hidden;
-          
           }
           
           .carousel-container {
@@ -154,8 +153,6 @@ export default class Yearcarousel extends Shadow() {
             box-sizing: border-box;
             bottom: 0; 
           }
-          
-
           
           .btn {
             padding: 2%;
@@ -206,6 +203,30 @@ export default class Yearcarousel extends Shadow() {
             color: rgb(173, 142, 86);
             font-weight: bold; 
           }
+
+          @media only screen and (max-width: 1000px) {
+            :host{
+              --svg-size: 2em;
+
+            }
+          }
+
+          @media only screen and (max-width: 767px) {
+            :host{
+              --svg-size: 2em;
+
+            }
+          }
+
+          @media only screen and (max-width: 500px) {
+            :host{
+              --svg-size: 1.5em;
+
+            }
+          }
+
+
+
           
         `
   }

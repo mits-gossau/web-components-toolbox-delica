@@ -1,6 +1,6 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
-export default class Emotioncarousel extends Shadow() {
+export default class EmotionCarousel extends Shadow() {
   yearSwiper
   yearCarouselComponent
   yearlist
@@ -80,7 +80,7 @@ export default class Emotioncarousel extends Shadow() {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 50vh;
+      height:50vh;
       margin: 0; 
       --svg-size: 2em;
     }
@@ -189,6 +189,27 @@ export default class Emotioncarousel extends Shadow() {
         }
 
       }
+
+      @media only screen and (max-width: 767px) {
+        :host {
+          --content-spacing-mobile: none;
+          height:20vh;
+          --content-width: 100%;
+
+        }
+        .title{
+          width: 100%
+        }
+       :host .slide-description{
+          max-width: 80%;
+          left: 10%;
+          padding: 0px;
+        
+        }
+        .controls{
+          display: none;
+        }
+
 
         `
   }

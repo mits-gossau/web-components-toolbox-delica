@@ -50,6 +50,7 @@
   --color-hover: var(--color-tertiary);
   --color-secondary: #172546;
   --color-tertiary: #e0b15c;
+ --details-default-icon-right-a-text-decoration: none;
   --details-default-svg-color-custom: var(--color-tertiary);
   --download-box-shadow-color-custom: var(--download-color-custom);
   --download-color-custom: var(--color-tertiary);
@@ -60,7 +61,9 @@
   --font-family-bold: FrutigerBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
   --font-family-secondary: KalamRegular, Avenir35Light, sans-serif;
   --font-family: FrutigerRegular, HelveticaNowText, Helvetica, Arial, sans-serif;
-  --footer-default-h4-color: var(--background-color);
+ --footer-default-text-decoration: none; 
+ --footer-default-a-text-decoration: none;
+ --footer-default-h4-color: var(--background-color);
   --footer-default-invert-a-color-hover-custom: var(--color-tertiary);
   --footer-default-invert-color-hover-custom: var(--color-tertiary);
   --footer-default-invert-orange-a-color-hover-custom: var(--color-hover);
@@ -97,4 +100,5 @@
   --teaser-tile-rounded-h6-figcaption-color-custom: var(--color-secondary);
   --title-border-display: none;
   --h-border-after: true;
+
 }

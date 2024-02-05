@@ -1,6 +1,6 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
-export default class TeaserFE extends Shadow() {
+export default class TeaserFe extends Shadow() {
   connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
     const imageholder = this.root.querySelector('.image')
@@ -20,12 +20,6 @@ export default class TeaserFE extends Shadow() {
         :host {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 5%; 
-
         }
     
         .column-left {
@@ -63,13 +57,13 @@ export default class TeaserFE extends Shadow() {
     
         
         .w {
-            width: 1em;
+            width: 2vh;
             height: 100%;
         }
     
         .h {
             width: 100%;
-            height: 1vh;
+            height: 2vw;
         }
         
         .sub {
@@ -105,7 +99,7 @@ export default class TeaserFE extends Shadow() {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 2%;
+            margin-bottom: 2vh;
         }
         .big-image {
             height: 100%;
@@ -123,6 +117,12 @@ export default class TeaserFE extends Shadow() {
             box-sizing: border-box;
             background: none;
         }
+        .image a-picture, .title{
+            transition: 0.5s;
+
+        }
+
+        
         .image:hover {
             cursor: pointer;
             opacity: 1;
@@ -142,6 +142,13 @@ export default class TeaserFE extends Shadow() {
         a{
             text-decoration-line: none;
             color: white;
+        }
+
+
+        @media only screen and (max-width: 767px){
+            .title{
+                font-size: large;
+            }
         }
         `
   }
