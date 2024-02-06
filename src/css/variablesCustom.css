@@ -100,8 +100,8 @@
   --teaser-tile-rounded-h6-figcaption-color-custom: var(--color-secondary);
   --title-border-display: none;
   --h-border-after: true;
-  --h-border-after-color: var(--color-tertiary);
+  --h-border-after-background-color: var(--color-tertiary);
   --h-border-after-height: 3px;
-  --h-border-after-left-spacing: 50%;
-  --h-border-after-translateX: -50%;
+  --h-border-after-left: 50%;
+  --h-border-after-transform: -50%;
 }
