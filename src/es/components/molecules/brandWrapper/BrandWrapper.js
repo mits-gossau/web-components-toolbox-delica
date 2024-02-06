@@ -32,8 +32,6 @@ export default class BrandWrapper extends Shadow() {
       --picture-scale-up-img-width: 10em;
 
     }
-
-
     @media only screen and (max-width: 767px) {
       :host{
         flex-direction: row; 
