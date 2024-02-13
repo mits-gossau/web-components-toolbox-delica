@@ -2,19 +2,19 @@ import { Shadow } from '../../web-components-toolbox/src/es/components/prototype
 
 export default class ProjektListeWrapper extends Shadow() {
 
-  constructor (options = {}, ...args) {
+  constructor(options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
   }
 
-  connectedCallback () {
+  connectedCallback() {
     if (this.shouldRenderCSS()) this.renderCSS()
   }
 
-  shouldRenderCSS () {
+  shouldRenderCSS() {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  renderCSS () {
+  renderCSS() {
     this.css = /* css */`
     :host{
         --h-margin-bottom:0.5em;
@@ -22,6 +22,20 @@ export default class ProjektListeWrapper extends Shadow() {
         
     }
 
+    :host > section {
+      flex-wrap: nowrap;
+    }
+
+    @media only screen and (max-width: 767px){
+      :host{
+        --wrapper-text-flex-direction-mobile: row;
+      }
+      
+      :host > section {
+        flex-direction: row;
+
+      }
+    }
         `
   }
 }
