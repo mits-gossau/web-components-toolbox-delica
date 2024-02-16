@@ -1,6 +1,6 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
-export default class ProjektListeWrapper extends Shadow() {
+export default class RecipeTable extends Shadow() {
 
   constructor(options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
@@ -16,11 +16,24 @@ export default class ProjektListeWrapper extends Shadow() {
 
   renderCSS() {
     this.css = /* css */`
-    :host{
-        --h-margin-bottom:0.5em;
-        --wrapper-text-flex-wrap:nowrap;
-        
+    table {
+      border-collapse: collapse; 
+      width:100%;
+      border-radius:6px;
+      overflow:hidden;
     }
+    td,th{ 
+      padding-left:8px;
+    }
+    thead tr        { 
+      height:4em;
+      background:#FFED86;
+      font-size:16px;
+    }
+
+
+  
+
 
 
         `

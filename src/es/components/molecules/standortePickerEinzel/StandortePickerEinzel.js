@@ -30,7 +30,6 @@ export default class StandortePickerEinzel extends Shadow() {
     } else {
       this.descriptions.forEach(desc => {
         if (Number(desc.getAttribute('id')) === 1) {
-          console.log(desc.getAttribute('id'))
           this.currentDescription.classList.remove('active')
           this.currentDescription = desc
           this.currentDescription.classList.add('active')
