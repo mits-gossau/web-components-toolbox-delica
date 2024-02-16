@@ -8,7 +8,6 @@ export default class BrandWrapper extends Shadow() {
 
   connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
-    console.log("test");
 
   }
 
