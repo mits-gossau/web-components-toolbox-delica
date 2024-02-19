@@ -1,41 +1,81 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class RecipeTable extends Shadow() {
-
-  constructor(options = {}, ...args) {
+  constructor (options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
   }
 
-  connectedCallback() {
+  connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
+    const tableHeader = this.root.querySelectorAll('th')
+    const tableBody = this.root.querySelector('tbody')
+
+    let tableWideHeaderCounter = 0
+    let tableHeaderCounter = 0
+    const wideHeaderWidth = 35
+
+    tableHeader.forEach(element => {
+      if (element.classList.contains('wide_head')) {
+        element.style.width = wideHeaderWidth + '%'
+        tableWideHeaderCounter++
+        console.log(tableWideHeaderCounter)
+      } else {
+        tableHeaderCounter++
+        console.log(tableHeaderCounter)
+      }
+    })
+
+    tableHeader.forEach(element => {
+      if (!(element.classList.contains('wide_head'))) {
+        element.style.width = ((100 - (tableWideHeaderCounter * wideHeaderWidth)) / tableHeaderCounter) + '%'
+      }
+    })
+
+    for (let i = 1; i < tableBody.children.length; i += 2) {
+      tableBody.children[i].classList.add('tint')
+    }
   }
 
-  shouldRenderCSS() {
+  shouldRenderCSS () {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  renderCSS() {
+  renderCSS () {
     this.css = /* css */`
+    .table-container {
+      overflow-x: var(--recipe-table-container-overflow-x, auto);
+      width: var(--recipe-table-container-width, auto); 
+      border-radius:var(--recipe-table-container, 5px);
+    }
+    
     table {
-      border-collapse: collapse; 
-      width:100%;
-      border-radius:6px;
-      overflow:hidden;
+      width: var(--recipe-table-width, 70em);
+      border-collapse: var(--recipe-table-border-collapse, collapse);
     }
-    td,th{ 
-      padding-left:8px;
+    
+    th {
+      padding: var(--recipe-table-header-padding, 1em); 
     }
-    thead tr        { 
-      height:4em;
-      background:#FFED86;
-      font-size:16px;
+    
+    thead tr {
+      max-height: var(--recipe-table-header-height, 3em);
+      height: auto;
+      color: var(--background-color, white);
+      background: var(--color-tertiary, var(--color-secondary, black));
     }
-
-
-  
-
-
-
+    
+    .bold {
+      font-weight: var(--recipe-table-font-weight, bold);
+    }
+    
+    p {
+      text-align: var(--recipe-table-text-align, left);
+    }
+    
+    .tint {
+      background-color: var(--recipe-table-background-tint, #dcdcdc);
+    }
+    
         `
   }
 }
