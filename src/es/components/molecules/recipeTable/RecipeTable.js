@@ -10,12 +10,9 @@ export default class RecipeTable extends Shadow() {
     const tableHeader = this.root.querySelectorAll('th')
     const tableBody = this.root.querySelector('tbody')
 
-
-
-    let tableWideHeaderCounter = 0;
-    let tableHeaderCounter = 0;
-    const wideHeaderWidth = 35;
-
+    let tableWideHeaderCounter = 0
+    let tableHeaderCounter = 0
+    const wideHeaderWidth = 35
 
     tableHeader.forEach(element => {
       if (element.classList.contains('wide_head')) {
@@ -23,7 +20,7 @@ export default class RecipeTable extends Shadow() {
         tableWideHeaderCounter++
         console.log(tableWideHeaderCounter)
       } else {
-        tableHeaderCounter++  
+        tableHeaderCounter++
         console.log(tableHeaderCounter)
       }
     })
@@ -35,9 +32,8 @@ export default class RecipeTable extends Shadow() {
     })
 
     for (let i = 1; i < tableBody.children.length; i += 2) {
-      tableBody.children[i].classList.add('tint');
-  }
-    
+      tableBody.children[i].classList.add('tint')
+    }
   }
 
   shouldRenderCSS () {
@@ -46,42 +42,40 @@ export default class RecipeTable extends Shadow() {
 
   renderCSS () {
     this.css = /* css */`
+    .table-container {
+      overflow-x: var(--recipe-table-container-overflow-x, auto);
+      width: var(--recipe-table-container-width, auto); 
+      border-radius:var(--recipe-table-container, 5px);
+    }
+    
     table {
-      border-collapse: collapse; 
-      max-width: 10rem;
-      width:auto;
-      border-radius:6px;
-      overflow:hidden;
-      box-sizing: border-box;
+      width: var(--recipe-table-width, 70em);
+      border-collapse: var(--recipe-table-border-collapse, collapse);
     }
-    td,th{ 
-      padding-left:8px;
+    
+    th {
+      padding: var(--recipe-table-header-padding, 1em); 
     }
-    thead tr        { 
-      height:var(--recipe-table-header-height, 3em);
-      color:var(--background-color, white); 
-      background:var(--color-tertiary, var(--color-secondary, black));
-      font-weight:bold;
-    } 
-
-    .bold{
-      font-weight: bold;
+    
+    thead tr {
+      max-height: var(--recipe-table-header-height, 3em);
+      height: auto;
+      color: var(--background-color, white);
+      background: var(--color-tertiary, var(--color-secondary, black));
     }
-
-    :host p{
-      font-size: small;
-      text-align: left; 
+    
+    .bold {
+      font-weight: var(--recipe-table-font-weight, bold);
     }
-
-    .tint{
-      background-color: #dcdcdc;
+    
+    p {
+      text-align: var(--recipe-table-text-align, left);
     }
-
-
-  
-
-
-
+    
+    .tint {
+      background-color: var(--recipe-table-background-tint, #dcdcdc);
+    }
+    
         `
   }
 }
