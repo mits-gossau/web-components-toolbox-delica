@@ -105,4 +105,5 @@
   --h-border-after-left: 50%;
   --h-border-after-transform: -50%;
   --recipe-table-header-height: 3em;
+  --wrapper-text-flex-wrap: wrap;
 }

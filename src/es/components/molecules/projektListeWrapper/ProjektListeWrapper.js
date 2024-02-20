@@ -17,8 +17,7 @@ export default class ProjektListeWrapper extends Shadow() {
     this.css = /* css */`
     :host{
         --h-margin-bottom:0.5em;
-        --wrapper-text-flex-wrap:nowrap;
-        
+  
     }
 
 
