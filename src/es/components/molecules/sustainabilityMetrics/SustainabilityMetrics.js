@@ -11,11 +11,13 @@ export default class SustainabilityMetrics extends Shadow() {
 
     connectedCallback() {
         if (this.shouldRenderCSS()) this.renderCSS();
-        console.log(this.counterSpeed)
         if (this.getAttribute("defaultSource")) {
             const currentDefaultSource = this.getAttribute("defaultSource");
             this.backgroundPicture.setAttribute("defaultSource", currentDefaultSource);
             this.backgroundOverlay.style.display = "block";
+            const div = document.createElement("div");
+            div.innerHTML = this.backgroundPicture.outerHTML;
+            this.backgroundPicture.replaceWith(div.firstChild);
             this.style = `color: white;`
         }
 
@@ -27,6 +29,8 @@ export default class SustainabilityMetrics extends Shadow() {
     renderCSS() {
         this.css = /* css */`
     :host {
+        overflow: var(--sustainability-metrics-overflow, hidden);
+        border-radius: var(--sustainability-metrics-border-radius, 5px);
         width: var(--sustainability-metrics-width, 100%);
         height: var(--sustainability-metrics-height, 20em);
         display: var(--sustainability-metrics-display, flex);
@@ -87,8 +91,8 @@ export default class SustainabilityMetrics extends Shadow() {
     @media only screen and (max-width: 950px) {
         .numbers{
             flex-direction: var(--sustainability-metrics-numbers-flex-direction-mobile, column);
-            padding-top: var(--sustainability-metrics-numbers-padding-top-mobile, 2em);
-            padding-bottom: var(--sustainability-metrics-numbers-padding-bottom-mobile, 2em);
+            padding-top: var(--sustainability-metrics-numbers-padding-top-mobile, 1em);
+            padding-bottom: var(--sustainability-metrics-numbers-padding-bottom-mobile, 1em);
         }
         :host{
             height: var(--sustainability-metrics-height-mobile, fit-content);        
