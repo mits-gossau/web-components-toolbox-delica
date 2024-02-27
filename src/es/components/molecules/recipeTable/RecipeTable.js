@@ -42,6 +42,10 @@ export default class RecipeTable extends Shadow() {
 
   renderCSS () {
     this.css = /* css */`
+    :host {
+      width: var(--recipe-table-host-width, 100%);
+      clear: var(--recipe-table-host-clear, both);
+    }
     .table-container {
       overflow-x: var(--recipe-table-container-overflow-x, auto);
       width: var(--recipe-table-container-width, auto); 
