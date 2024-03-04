@@ -6,7 +6,6 @@ export default class SustainabilityMetrics extends Shadow() {
         this.backgroundPicture = this.root.querySelector('.background')
         this.backgroundOverlay = this.root.querySelector('.background-overlay')
 
-
     }
 
     connectedCallback() {

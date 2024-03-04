@@ -18,10 +18,8 @@ export default class RecipeTable extends Shadow() {
       if (element.classList.contains('wide_head')) {
         element.style.width = wideHeaderWidth + '%'
         tableWideHeaderCounter++
-        console.log(tableWideHeaderCounter)
       } else {
         tableHeaderCounter++
-        console.log(tableHeaderCounter)
       }
     })
 
