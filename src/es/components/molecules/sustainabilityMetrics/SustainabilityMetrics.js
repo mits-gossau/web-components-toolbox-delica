@@ -3,7 +3,7 @@ import { Shadow } from '../../web-components-toolbox/src/es/components/prototype
 export default class SustainabilityMetrics extends Shadow() {
     constructor(options = {}, ...args) {
         super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
-        this.backgroundPicture = this.root.querySelector('.background a-picture')
+        this.backgroundPicture = this.root.querySelector('.background')
         this.backgroundOverlay = this.root.querySelector('.background-overlay')
 
 
@@ -14,10 +14,8 @@ export default class SustainabilityMetrics extends Shadow() {
         if (this.getAttribute("defaultSource")) {
             const currentDefaultSource = this.getAttribute("defaultSource");
             this.backgroundPicture.setAttribute("defaultSource", currentDefaultSource);
+            this.backgroundPicture.style = `background-image: url(${currentDefaultSource}); background-size: cover; background-position: center;`
             this.backgroundOverlay.style.display = "block";
-            const div = document.createElement("div");
-            div.innerHTML = this.backgroundPicture.outerHTML;
-            this.backgroundPicture.replaceWith(div.firstChild);
             this.style = `color: white;`
         }
 
@@ -60,12 +58,6 @@ export default class SustainabilityMetrics extends Shadow() {
         z-index: var(--sustainability-metrics-background-overlay-z-index, 2);
         border-radius: var(--sustainability-metrics-background-overlay-border-radius, 5px);
     }
-    :host .background a-picture{
-        position: var(--sustainability-metrics-background-a-picture-position, relative); 
-        width: var(--sustainability-metrics-background-a-picture-width, 7em);
-        height: var(--sustainability-metrics-background-a-picture-height, 7em); 
-    }
-    
 
     :host .numbers{
         display: var(--sustainability-metrics-numbers-display, flex);
