@@ -59,9 +59,9 @@
   --emotion-pictures-with-button-img-max-height: var(--emotion-pictures-default-img-max-height);
   --emotion-pictures-with-logo-img-max-height: var(--emotion-pictures-default-img-max-height);
   --emotion-pictures-with-title-img-max-height: var(--emotion-pictures-default-img-max-height);
-  --font-family-bold: JostBold;
-  --font-family-secondary: JostRegular;
-  --font-family: JostRegular;
+  --font-family-bold: JostBold, HelveticaNowTextBold, HelveticaNowText, Helvetica, Arial, sans-serif;
+  --font-family-secondary: JostRegular, Avenir35Light, sans-serif;
+  --font-family: JostRegular, HelveticaNowText, Helvetica, Arial, sans-serif;
  --footer-default-text-decoration: none; 
  --footer-default-a-text-decoration: none;
  --footer-default-h4-color: var(--background-color);
