@@ -58,76 +58,76 @@ export default class StandortePickerEinzel extends Shadow() {
   renderCSS() {
     this.css = /* css */`
       :host {
-        width: 100%;
-        height: 100%;
+        width: var(--StandortePickerEinzel-width, 100%);
+        height: var(--StandortePickerEinzel-height, 100%);
       }
 
       .slide {
-        display: flex;
-        text-align: left;
+        display: var(--StandortePickerEinzel-display, flex);
+        text-align: var(--StandortePickerEinzel-text-align, left);
       }
 
       a-picture {
-        float: left;
-        --img-max-width: 70%;
-        padding: 5%;
+        float: var(--StandortePickerEinzel-float, left);
+        --img-max-width: var(--StandortePickerEinzel-img-max-width, 70%);
+        padding: var(--StandortePickerEinzel-padding, 5%);
       }
 
       .description {
-        height: 100%;
-        display: none;
-        transition: opacity 0.3s ease; 
+        height: var(--StandortePickerEinzel-description-height, 100%);
+        display: var(--StandortePickerEinzel-description-display, none);
+        transition: var(--StandortePickerEinzel-description-transition, opacity 0.5s ease); 
       }
 
       h2 {
-        padding-top: 2%;
-        font-size: large;
+        padding-top: var(--StandortePickerEinzel-h2-padding-top, 2%); 
+        font-size: var(--StandortePickerEinzel-h2-font-size, large);
       }
 
       p {
-        font-size: small;
+        font-size: var(--StandortePickerEinzel-p-font-size, small);
       }
 
       .left-container {
-        width: 60%;
-        height: 100%;
-        padding: 2%;
+        width: var(--StandortePickerEinzel-left-container-width, 60%);
+        height: var(--StandortePickerEinzel-left-container-height, 100%);
+        padding: var(--StandortePickerEinzel-left-container-padding, 2%);
       }
 
       .right-container {
-        padding: 3%;
-        width: 30%;
-        height: 26em;
-        border-left: 1px solid grey;
+        padding: var(--StandortePickerEinzel-right-container-padding, 3%);
+        width: var(--StandortePickerEinzel-right-container-width, 30%);
+        height: var(--StandortePickerEinzel-right-container-height, 26em);
+        border-left: var(--StandortePickerEinzel-right-container-border-left, 1px solid grey);
       }
 
       .active {
-        display: block;
-        opacity: 1; 
+        display: var(--StandortePickerEinzel-active-display, block);
+        opacity: var(--StandortePickerEinzel-active-opacity, 1); 
       }
 
       @media only screen and (max-width: 1200px) {
         :host {
-          width: 100%;
-          height: 100vh;
+          width: var(--StandortePickerEinzel-width, 100%);
+          height: var(--StandortePickerEinzel-height, 100vh);
         }
 
         .slide {
-          flex-direction: column;
+          flex-direction: var(--StandortePickerEinzel-slide-flex-direction, column);
         }
 
         .right-container {
-          width: 100%;
-          border-left: none;
-          border-top: 1px solid grey;
+          width: var(--StandortePickerEinzel-right-container-width, 100%);
+          border-left: var(--StandortePickerEinzel-right-container-border-left, none);
+          border-top: var(--StandortePickerEinzel-right-container-border-top, 1px solid grey);
         }
 
         a-picture {
-          --img-max-width: 30%;
+          --img-max-width: var(--StandortePickerEinzel-img-max-width, 30%);
         }
 
         .left-container {
-          width: 100%;
+          width: var(--StandortePickerEinzel-left-container-width, 100%);
         }
       }
     `;

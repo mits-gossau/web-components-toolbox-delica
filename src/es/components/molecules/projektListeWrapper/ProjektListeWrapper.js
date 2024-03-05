@@ -16,7 +16,7 @@ export default class ProjektListeWrapper extends Shadow() {
   renderCSS () {
     this.css = /* css */`
     :host{
-        --h-margin-bottom:0.5em;
+        --h-margin-bottom:var(--ProjektListeWrapper--h-margin-bottom, 0.5em);
   
     }
 
