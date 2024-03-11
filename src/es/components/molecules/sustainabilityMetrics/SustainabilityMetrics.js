@@ -1,30 +1,29 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class SustainabilityMetrics extends Shadow() {
-    constructor(options = {}, ...args) {
-        super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
-        this.backgroundPicture = this.root.querySelector('.background')
-        this.backgroundOverlay = this.root.querySelector('.background-overlay')
+  constructor (options = {}, ...args) {
+    super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
+    this.backgroundPicture = this.root.querySelector('.background')
+    this.backgroundOverlay = this.root.querySelector('.background-overlay')
+  }
 
+  connectedCallback () {
+    if (this.shouldRenderCSS()) this.renderCSS()
+    if (this.getAttribute('defaultSource')) {
+      const currentDefaultSource = this.getAttribute('defaultSource')
+      this.backgroundPicture.setAttribute('defaultSource', currentDefaultSource)
+      this.backgroundPicture.style = `background-image: url(${currentDefaultSource}); background-size: cover; background-position: center;`
+      this.backgroundOverlay.style.display = 'block'
+      this.style = 'color: white;'
     }
+  }
 
-    connectedCallback() {
-        if (this.shouldRenderCSS()) this.renderCSS();
-        if (this.getAttribute("defaultSource")) {
-            const currentDefaultSource = this.getAttribute("defaultSource");
-            this.backgroundPicture.setAttribute("defaultSource", currentDefaultSource);
-            this.backgroundPicture.style = `background-image: url(${currentDefaultSource}); background-size: cover; background-position: center;`
-            this.backgroundOverlay.style.display = "block";
-            this.style = `color: white;`
-        }
+  shouldRenderCSS () {
+    return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
+  }
 
-    }
-    shouldRenderCSS() {
-        return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
-    }
-
-    renderCSS() {
-        this.css = /* css */`
+  renderCSS () {
+    this.css = /* css */`
     :host {
         overflow: var(--sustainability-metrics-overflow, hidden);
         border-radius: var(--sustainability-metrics-border-radius, 5px);
@@ -92,6 +91,5 @@ export default class SustainabilityMetrics extends Shadow() {
 
 
         `
-    }
-
+  }
 }
