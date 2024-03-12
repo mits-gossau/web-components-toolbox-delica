@@ -17,8 +17,14 @@ export default class ProjektListeWrapper extends Shadow() {
     this.css = /* css */`
     :host{
         --h-margin-bottom:var(--ProjektListeWrapper--h-margin-bottom, 0.5em);
-  
+        --img-height: var(--brand-wrapper-img-height, 1%);
+        --picture-store-logo-img-height: var(--brand-wrapper-img-height, 5em);
+
     }
+    :host o-wrapper {
+      --align-items: var(--ProjektListeWrapper--align-items, normal); 
+    }
+  
 
 
         `

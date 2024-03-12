@@ -17,26 +17,26 @@ export default class BrandWrapper extends Shadow() {
     this.css = /* css */`
 
     :host o-wrapper{
-      --wrapper-teaser-align-items: center;
+      --wrapper-teaser-align-items: var(--brand-wrapper-align-items, center);
     }
 
     :host {
-      --any-display: flex;
-      flex-direction: column;      
-      justify-content: space-around;
-      --img-height: 1%;
-      --picture-scale-up-img-height: 8em;
-      --picture-scale-up-img-width: 10em;
+      --any-display: var(--brand-wrapper-any-display, flex);
+      flex-direction: var(--brand-wrapper-flex-direction, column);      
+      justify-content: var(--brand-wrapper-justify-content, space-around);
+      --img-height: var(--brand-wrapper-img-height, 1%);
+      --picture-scale-up-img-height: var(--brand-wrapper-picture-scale-up-img-height, 8em);
+      --picture-scale-up-img-width: var(--brand-wrapper-picture-scale-up-img-width, 10em);
 
     }
     @media only screen and (max-width: 767px) {
       :host{
-        flex-direction: row; 
-        --picture-scale-up-img-height-mobile: 5em;
-        --picture-scale-up-img-width-mobile: 10em;
+        flex-direction: var(--brand-wrapper-flex-direction-mobile, row); 
+        --picture-scale-up-img-height-mobile: var(--brand-wrapper-picture-scale-up-img-height-mobile, 5em);
+        --picture-scale-up-img-width-mobile: var(--brand-wrapper-picture-scale-up-img-width-mobile, 10em);
       }
       brand-column{
-        width: 45%;
+        width: var(--brand-column-width-mobile, 45%);
       }
     }
 
