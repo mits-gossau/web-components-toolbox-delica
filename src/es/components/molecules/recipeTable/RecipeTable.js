@@ -48,6 +48,7 @@ export default class RecipeTable extends Shadow() {
       overflow-x: var(--recipe-table-container-overflow-x, auto);
       width: var(--recipe-table-container-width, auto); 
       border-radius:var(--recipe-table-container, 5px);
+      text-align: var(--recipe-table-container-text-align, center);
     }
     
     table {
