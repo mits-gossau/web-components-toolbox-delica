@@ -222,10 +222,13 @@ export default class YearCarousel extends Shadow() {
             }
           }
 
-          @media only screen and (max-width: 500px) {
+          @media only screen and (max-width: 767px) {
             :host{
               --svg-size: 1.5em;
 
+            }
+            .carousel-container {
+              border-radius: 0.3em;
             }
           }
 

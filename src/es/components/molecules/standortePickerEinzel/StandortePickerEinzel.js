@@ -112,12 +112,14 @@ export default class StandortePickerEinzel extends Shadow() {
 
         .slide {
           flex-direction: var(--StandortePickerEinzel-slide-flex-direction, column);
+          align-items: var(--StandortePickerEinzel-slide-align-items, center);
         }
 
         .right-container {
           width: var(--StandortePickerEinzel-right-container-width, 100%);
           border-left: var(--StandortePickerEinzel-right-container-border-left, none);
           border-top: var(--StandortePickerEinzel-right-container-border-top, 1px solid grey);
+          height: var(--StandortePickerEinzel-right-container-height, fit-content);
         }
 
         a-picture {

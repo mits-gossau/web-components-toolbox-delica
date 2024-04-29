@@ -154,6 +154,9 @@ export default class TeaserFe extends Shadow() {
                 font-size: large;
                 text-align: center;
             }
+            .image{
+                border-radius: 0.3em;
+            }
         }
         `
   }
