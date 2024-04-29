@@ -1,53 +1,52 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class TeaserFe extends Shadow() {
-  connectedCallback () {
-    if (this.shouldRenderCSS()) this.renderCSS()
-    const imageholder = this.root.querySelector('.image')
+    connectedCallback() {
+        if (this.shouldRenderCSS()) this.renderCSS()
+        const imageholder = this.root.querySelector('.image')
 
-    imageholder.addEventListener('click', (event) => {
-      console.log(event)
-    })
-  }
+        imageholder.addEventListener('click', (event) => {
+            console.log(event)
+        })
+    }
 
-  shouldRenderCSS () {
-    return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
-  }
+    shouldRenderCSS() {
+        return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
+    }
 
-  renderCSS () {
-    this.css = /* css */`
-
+  renderCSS() {
+        this.css = /* css */`
         :host {
-            width: 100vw;
-            height: 100vh;
+            width: var(--TeaserFe-width, 100vw);
+            height: var(--TeaserFe-height, 100vh);
         }
 
         .image{
-            border-radius: 0.5em;
+            border-radius: var(--TeaserFe-image-border-radius, 0.5em);
         }
     
         .column-left {
-            height: 100%;
+            height: var(--TeaserFe-column-left-height, 100%);
         }
         
         .higher {
-            height: 40%;
+            height: var(--TeaserFe-higher-height, 40%);
         }
         
         .lower {
-            height: 35%;
+            height: var(--TeaserFe-lower-height, 35%);
         }
         
         .longer {
-            width: 60%;
+            width: var(--TeaserFe-longer-width, 60%);
         }
         
         .shorter {
-            width: 40%;
+            width: var(--TeaserFe-shorter-width, 40%);
         }
         
         .same {
-            width: 50%;
+            width: var(--TeaserFe-same-width, 50%);
         }
         
         .teaser-container {
@@ -73,18 +72,18 @@ export default class TeaserFe extends Shadow() {
         }
         
         .sub a-picture {
-            width: 100%;
-            height: 100%;
+            width: var(--TeaserFe-sub-a-picture-width, 100%);
+            height: var(--TeaserFe-sub-a-picture-height, 100%);
             position: absolute;
             object-fit: cover;
             top: 0;
             left: 0;
         }
         .img {
-            height: 100%;
+            height: var(--TeaserFe-img-height, 100%);
         }        
         .title {
-            font-size: x-large;
+            font-size: var(--TeaserFe-title-font-size, x-large);
             position: relative;
             z-index: 1;
         }  
@@ -108,12 +107,12 @@ export default class TeaserFe extends Shadow() {
             gap: 1em;
         }
         .small-image {
-            height: 50%;
+            height: var(--TeaserFe-small-image-height, 50%);
             box-sizing: border-box;
             background: none;
         }
         .image a-picture, .title{
-            transition: 0.5s;
+            transition: var(--TeaserFe-transition-duration, 0.5s);
 
         }
 
@@ -125,7 +124,7 @@ export default class TeaserFe extends Shadow() {
         }
 
         .image:hover .title{
-            color: rgb(214, 169, 88);
+            color: var(--TeaserFe-hover-title-color, rgb(214, 169, 88));
 
         }
         
@@ -135,20 +134,21 @@ export default class TeaserFe extends Shadow() {
         }
 
         a{
-            text-decoration-line: none;
-            color: white;
+            text-decoration-line: var(--TeaserFe-link-decoration-line, none);
+            color: var(--TeaserFe-link-color, white);
         }
 
 
         @media only screen and (max-width: 767px){
             .title{
-                font-size: large;
+                font-size: var(--TeaserFe-mobile-title-font-size, large);
                 text-align: center;
             }
             .image{
-                border-radius: 0.3em;
+                border-radius: var(--TeaserFe-mobile-image-border-radius, 0.3em);
             }
         }
-        `
-  }
+        `;
+    }
+
 }
