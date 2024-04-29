@@ -56,19 +56,10 @@ export default class TeaserFe extends Shadow() {
             width: 100%;
             display: flex;
             flex-direction: column;
-    
+            gap: 1em;
+
         }
     
-        
-        .w {
-            width: 2vh;
-            height: 100%;
-        }
-    
-        .h {
-            width: 100%;
-            height: 2vw;
-        }
         
         .sub {
             display: flex;
@@ -103,7 +94,7 @@ export default class TeaserFe extends Shadow() {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 2vh;
+            gap: 1em;
         }
         .big-image {
             height: 100%;
@@ -111,13 +102,13 @@ export default class TeaserFe extends Shadow() {
             background: none;
         }
         .column-right {
-            justify-content: space-between;
             height: 100%;
             display: flex;
             flex-direction: column;
+            gap: 1em;
         }
         .small-image {
-            height: 47.5%;
+            height: 50%;
             box-sizing: border-box;
             background: none;
         }
