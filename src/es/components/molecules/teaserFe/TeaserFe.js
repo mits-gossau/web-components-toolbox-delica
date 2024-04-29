@@ -21,6 +21,10 @@ export default class TeaserFe extends Shadow() {
             width: 100vw;
             height: 100vh;
         }
+
+        .image{
+            border-radius: 0.5em;
+        }
     
         .column-left {
             height: 100%;
