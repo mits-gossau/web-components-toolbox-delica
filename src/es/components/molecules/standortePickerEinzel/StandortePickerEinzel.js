@@ -20,7 +20,6 @@ export default class StandortePickerEinzel extends Shadow() {
 
   setCurrentDescription = (event) => {
     if (event) {
-      console.log(event.composedPath())
       const composedPath = Array.from(event.composedPath())
       if (composedPath.some(node => node.classList && node.classList.contains('btn-open'))) {
         this.currentDescription.classList.remove('active')
