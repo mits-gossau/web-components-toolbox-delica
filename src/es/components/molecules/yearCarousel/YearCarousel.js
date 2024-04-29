@@ -218,7 +218,7 @@ export default class YearCarousel extends Shadow() {
             }
 
             .component-container{
-              height: 55vh;
+              height: 60vh;
             }
           }
 
