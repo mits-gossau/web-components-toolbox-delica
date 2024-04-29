@@ -148,6 +148,7 @@ export default class TeaserFe extends Shadow() {
         @media only screen and (max-width: 767px){
             .title{
                 font-size: large;
+                text-align: center;
             }
         }
         `
