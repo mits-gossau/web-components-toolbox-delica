@@ -112,6 +112,8 @@ export default class YearCarousel extends Shadow() {
             width: 100%;
             position: relative;
             overflow: hidden;
+            background: rgb(207 207 207);
+            border-radius: 0.5em;
           }
           
           .slide {
@@ -204,10 +206,15 @@ export default class YearCarousel extends Shadow() {
             font-weight: bold; 
           }
 
-          @media only screen and (max-width: 1000px) {
-            :host{
+          @media only screen and (max-width: 1200px) {
+            :host a-picture{
+              --picture-cover-img-object-fit: contain;
               --svg-size: 2em;
 
+            }
+
+            .component-container{
+              height: 55vh;
             }
           }
 
