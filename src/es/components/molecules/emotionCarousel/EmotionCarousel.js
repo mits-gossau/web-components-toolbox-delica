@@ -27,6 +27,8 @@ export default class EmotionCarousel extends Shadow() {
     this.updateSlideTransform(curSlide)
 
     this.nextButton.addEventListener('click', () => {
+      clearInterval(timer)
+      timer = setInterval(changeSlide, 10000)
       curSlide++
 
       if (curSlide === this.slides.length) {
@@ -55,7 +57,7 @@ export default class EmotionCarousel extends Shadow() {
       this.updateSlideTransform(curSlide)
     }
 
-    setInterval(changeSlide, 10000)
+    let timer = setInterval(changeSlide, 10000)
   }
 
   shouldRenderCSS () {
@@ -81,7 +83,7 @@ export default class EmotionCarousel extends Shadow() {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height:50vh;
+      height:33vw;
       margin: 0; 
       --svg-size: 2em;
     }
