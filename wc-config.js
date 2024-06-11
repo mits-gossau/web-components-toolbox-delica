@@ -212,7 +212,7 @@
     },
     {
       selector: 'd-o-',
-      url: 'organismus/',
+      url: 'organisms/',
       separateFolder: true
     },
     {
