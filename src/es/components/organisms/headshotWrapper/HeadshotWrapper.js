@@ -25,14 +25,6 @@ import {Wrapper} from '../../web-components-toolbox/src/es/components/organisms/
  */
 
 export default class HeadshotWrapper extends Wrapper() {
-  // connectedCallback () {
-  //   super.connectedCallback()
-  //   if (this.shouldRenderCSS()) this.renderCSS()
-  // }
-
-  // shouldRenderCSS () {
-  //   return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
-  // }
   renderCSS() {
     const result = super.renderCSS()
     this.css = /* css */ `
@@ -47,7 +39,7 @@ export default class HeadshotWrapper extends Wrapper() {
         }
         
         :host a-picture {
-          --any-1-width: 20em;
+          --any-1-width: 100%;
         }
         
         :host > section {
