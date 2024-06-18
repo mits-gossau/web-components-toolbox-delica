@@ -108,4 +108,5 @@
   --recipe-table-header-height: 3em;
   --wrapper-text-flex-wrap: wrap;
   --content-spacing: 1.7em;
+  --content-spacing-mobile: 2rem;
 }
