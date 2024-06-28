@@ -21,7 +21,6 @@ export default class TeaserFe extends Shadow() {
             height: var(--TeaserFe-height, fit-content);
 
         }
-
         .image{
             border-radius: var(--TeaserFe-image-border-radius, 0.5em);
         }
