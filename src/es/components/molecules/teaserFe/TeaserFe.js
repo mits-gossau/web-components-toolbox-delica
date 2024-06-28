@@ -18,7 +18,8 @@ export default class TeaserFe extends Shadow() {
         this.css = /* css */`
         :host {
             width: var(--TeaserFe-width, 100vw);
-            height: var(--TeaserFe-height, 100vh);
+            height: var(--TeaserFe-height, fit-content);
+
         }
 
         .image{
@@ -51,7 +52,7 @@ export default class TeaserFe extends Shadow() {
         
         .teaser-container {
             color: white;
-            height: 100%;
+            height: 66vw;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -146,6 +147,26 @@ export default class TeaserFe extends Shadow() {
             }
             .image{
                 border-radius: var(--TeaserFe-mobile-image-border-radius, 0.3em);
+            }
+
+            .teaser-container {
+                color: white;
+                height: 120vw;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+    
+            }
+        }
+        @media only screen and (max-width: 400px){
+            .teaser-container {
+                height: 150vw;
+                gap: 0.7em;
+    
+            }
+            .row {
+                gap: 0.7em;
             }
         }
         `;
