@@ -75,6 +75,7 @@ export default class EmotionCarousel extends Shadow() {
     this.css = /* css */`
 
     :host {
+      text-shadow: 1px 3px 18px black;
       --any-margin-top-first-child: var(--content-spacing);
       --content-width: 100%;
       --color: white;
