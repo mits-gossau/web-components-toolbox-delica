@@ -7,7 +7,6 @@ export default class HeaderSection extends Shadow() {
 
   connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
-    console.log('connected')
   }
 
   shouldRenderCSS () {

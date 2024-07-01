@@ -51,7 +51,7 @@ export default class TeaserFe extends Shadow() {
         
         .teaser-container {
             color: white;
-            height: 66vw;
+            height: fit-content;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -94,6 +94,7 @@ export default class TeaserFe extends Shadow() {
             flex-direction: row;
             justify-content: space-between;
             gap: 1em;
+            height: 30vw;
         }
         .big-image {
             height: 100%;
@@ -150,21 +151,29 @@ export default class TeaserFe extends Shadow() {
 
             .teaser-container {
                 color: white;
-                height: 120vw;
+                height: fit-content;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
                 gap: 1em;
     
             }
+            .row {
+                gap: 0.7em;
+                height: 50vw;
+            }
         }
         @media only screen and (max-width: 400px){
             .teaser-container {
-                height: 150vw;
+                height: fit-content;
                 gap: 0.7em;
     
             }
             .row {
+                gap: 0.7em;
+                height: 50vw;
+            }
+            .column-right {
                 gap: 0.7em;
             }
         }
