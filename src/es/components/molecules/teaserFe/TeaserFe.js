@@ -86,6 +86,7 @@ export default class TeaserFe extends Shadow() {
             font-size: var(--TeaserFe-title-font-size, x-large);
             position: relative;
             z-index: 1;
+            text-shadow: 1px 3px 12px black;
         }  
         
         .row {
@@ -155,26 +156,24 @@ export default class TeaserFe extends Shadow() {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                gap: 1em;
+                gap: 0.7em;
     
             }
             .row {
                 gap: 0.7em;
-                height: 50vw;
+                height: 55vw;
+            }
+
+            .teaser-container {
+                gap: 0.7em;
+            }
+            .column-right {
+                gap: 0.7em;
             }
         }
         @media only screen and (max-width: 400px){
             .teaser-container {
                 height: fit-content;
-                gap: 0.7em;
-    
-            }
-            .row {
-                gap: 0.7em;
-                height: 50vw;
-            }
-            .column-right {
-                gap: 0.7em;
             }
         }
         `;
