@@ -109,4 +109,6 @@
   --wrapper-text-flex-wrap: wrap;
   --content-spacing: 1.7em;
   --content-spacing-mobile: 2rem;
+  --hr-border-bottom: 2px dotted #949494;
+  
 }
