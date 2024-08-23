@@ -5,11 +5,14 @@ export default class SustainabilityMetrics extends Shadow() {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
     this.backgroundPicture = this.root.querySelector('.background')
     this.backgroundOverlay = this.root.querySelector('.background-overlay')
+    this.numbersContainer = this.root.querySelectorAll('.numbers > *')
+
   }
 
   connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
     if (this.getAttribute('defaultSource')) {
+      console.log(this.numbersContainer.length)
       const currentDefaultSource = this.getAttribute('defaultSource')
       this.backgroundPicture.setAttribute('defaultSource', currentDefaultSource)
       this.backgroundPicture.style = `background-image: url(${currentDefaultSource}); background-size: cover; background-position: center;`
@@ -17,6 +20,7 @@ export default class SustainabilityMetrics extends Shadow() {
       this.style = 'color: white;'
     }
   }
+
 
   shouldRenderCSS () {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
@@ -71,6 +75,7 @@ export default class SustainabilityMetrics extends Shadow() {
         display: var(--sustainability-metrics-numbers-number-display, flex);
         flex-direction: var(--sustainability-metrics-numbers-number-flex-direction, column);
         align-items: var(--sustainability-metrics-numbers-number-align-items, center);
+        min-width: var(--sustainability-metrics-numbers-number-min-width, ${100 / this.numbersContainer.length}%)
         
     }
 
