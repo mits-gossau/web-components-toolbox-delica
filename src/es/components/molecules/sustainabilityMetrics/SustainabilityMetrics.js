@@ -1,7 +1,7 @@
 import { Shadow } from '../../web-components-toolbox/src/es/components/prototypes/Shadow.js'
 
 export default class SustainabilityMetrics extends Shadow() {
-  constructor (options = {}, ...args) {
+  constructor(options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
     this.backgroundPicture = this.root.querySelector('.background')
     this.backgroundOverlay = this.root.querySelector('.background-overlay')
@@ -9,7 +9,7 @@ export default class SustainabilityMetrics extends Shadow() {
 
   }
 
-  connectedCallback () {
+  connectedCallback() {
     if (this.shouldRenderCSS()) this.renderCSS()
     if (this.getAttribute('defaultSource')) {
       console.log(this.numbersContainer.length)
@@ -21,12 +21,11 @@ export default class SustainabilityMetrics extends Shadow() {
     }
   }
 
-
-  shouldRenderCSS () {
+  shouldRenderCSS() {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  renderCSS () {
+  renderCSS() {
     this.css = /* css */`
     :host {
         overflow: var(--sustainability-metrics-overflow, hidden);
@@ -93,7 +92,6 @@ export default class SustainabilityMetrics extends Shadow() {
             height: var(--sustainability-metrics-height-mobile, fit-content);        
         }
     }
-
 
         `
   }
