@@ -45,6 +45,7 @@ export default class ParallaxImageContainer extends Shadow() {
   }
 
   .text-section{
+    min-height: 40vh;
     height: fit-content;
     padding-top: 2em;
     padding-bottom: 2em;
