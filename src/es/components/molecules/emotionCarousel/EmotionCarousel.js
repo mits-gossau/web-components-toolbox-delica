@@ -26,7 +26,7 @@ export default class EmotionCarousel extends Shadow() {
     let curSlide = 0
     this.updateSlideTransform(curSlide)
 
-    this.nextButton.addEventListener('click', () => {
+    this.nextButton?.addEventListener('click', () => {
       clearInterval(timer)
       timer = setInterval(changeSlide, 10000)
       curSlide++
@@ -38,7 +38,7 @@ export default class EmotionCarousel extends Shadow() {
       this.updateSlideTransform(curSlide)
     })
 
-    this.prevButton.addEventListener('click', () => {
+    this.prevButton?.addEventListener('click', () => {
       if (curSlide === 0) {
         curSlide = this.slides.length - 1
       } else {
