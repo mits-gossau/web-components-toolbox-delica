@@ -84,7 +84,7 @@ export default class EmotionCarousel extends Shadow() {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height:33vw;
+      height:25vw;
       margin: 0; 
       --svg-size: 2em;
     }
