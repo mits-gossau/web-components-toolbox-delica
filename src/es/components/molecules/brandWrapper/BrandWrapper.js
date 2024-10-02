@@ -15,31 +15,18 @@ export default class BrandWrapper extends Shadow() {
 
   renderCSS () {
     this.css = /* css */`
-
-    :host o-wrapper{
-      --wrapper-teaser-align-items: var(--brand-wrapper-align-items, center);
-    }
-
-    :host {
+    :host{
+      display: var(--any-display, block);
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0.5em;
       --any-display: var(--brand-wrapper-any-display, flex);
-      flex-direction: var(--brand-wrapper-flex-direction, column);      
-      justify-content: var(--brand-wrapper-justify-content, space-around);
       --img-height: var(--brand-wrapper-img-height, 1%);
       --picture-scale-up-img-height: var(--brand-wrapper-picture-scale-up-img-height, 8em);
       --picture-scale-up-img-width: var(--brand-wrapper-picture-scale-up-img-width, 10em);
 
     }
-    @media only screen and (max-width: 767px) {
-      :host{
-        flex-direction: var(--brand-wrapper-flex-direction-mobile, row); 
-        --picture-scale-up-img-height-mobile: var(--brand-wrapper-picture-scale-up-img-height-mobile, 5em);
-        --picture-scale-up-img-width-mobile: var(--brand-wrapper-picture-scale-up-img-width-mobile, 10em);
-      }
-      brand-column{
-        width: var(--brand-column-width-mobile, 45%);
-      }
-    }
-
         `
   }
 }
