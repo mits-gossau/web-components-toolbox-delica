@@ -61,7 +61,7 @@ export default class RecipeTable extends Shadow() {
     }
 
     td{
-      padding: 1.5em;
+      padding: 1em;
     }
     
     thead tr {
