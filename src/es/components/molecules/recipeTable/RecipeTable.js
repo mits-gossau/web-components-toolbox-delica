@@ -59,6 +59,10 @@ export default class RecipeTable extends Shadow() {
     th {
       padding: var(--recipe-table-header-padding, 1em); 
     }
+
+    td{
+      padding: 1.5em;
+    }
     
     thead tr {
       max-height: var(--recipe-table-header-height, 3em);
