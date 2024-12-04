@@ -86,6 +86,7 @@
   --hr-secondary-border-bottom: 2px solid var(--color-secondary);
   --hr-secondary-opacity: 1;
   --language-switcher-default-content-width: var(--header-default-content-width);
+  --multi-level-navigation-delica-nav-background-color-mobile-custom: var(--color-secondary);
   --navigation-default-a-link-line-height-mobile: 1.5;
   --navigation-default-a-link-line-height: 1.5;
   /* --navigation-default-background-color: #ECECE8; */
@@ -110,5 +111,6 @@
   --content-spacing: 1.7em;
   --content-spacing-mobile: 2rem;
   --hr-border-bottom: 2px dotted #949494;
+  --details-default-icon-right-h4-color: white;
   
 }
