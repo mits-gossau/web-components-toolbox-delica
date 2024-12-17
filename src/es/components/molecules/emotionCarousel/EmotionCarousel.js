@@ -8,7 +8,7 @@ export default class EmotionCarousel extends Shadow() {
   swipes
   nextButton
 
-  constructor (options = {}, ...args) {
+  constructor(options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
 
     this.yearSwiper = this.root.querySelector('.year-swiper')
@@ -20,7 +20,7 @@ export default class EmotionCarousel extends Shadow() {
     this.prevButton = this.root.querySelector('.section.left')
   }
 
-  connectedCallback () {
+  connectedCallback() {
     if (this.shouldRenderCSS()) this.renderCSS()
 
     let curSlide = 0
@@ -60,22 +60,22 @@ export default class EmotionCarousel extends Shadow() {
     let timer = setInterval(changeSlide, 10000)
   }
 
-  shouldRenderCSS () {
+  shouldRenderCSS() {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  updateSlideTransform (curSlide) {
+  updateSlideTransform(curSlide) {
     this.slides.forEach((slide, index) => {
       const offset = index - curSlide
       slide.style.transform = `translateX(${offset * 100}%)`
     })
   }
 
-  renderCSS () {
+  renderCSS() {
     this.css = /* css */`
 
     :host {
-      --emotion-pictures-default-img-max-height: 50vh;
+        --emotion-pictures-default-img-max-height: 50vw;
       text-shadow: 1px 3px 18px black;
       --any-margin-top-first-child: var(--content-spacing);
       --content-width: 100%;
@@ -187,7 +187,7 @@ export default class EmotionCarousel extends Shadow() {
             font-size: small;
         }
         
-      @media only screen and (max-width: 1024px) {
+      @media only screen and (max-width: 1000px) {
         .slide-description,
         .link-description{
           font-size: xx-small;
@@ -196,14 +196,18 @@ export default class EmotionCarousel extends Shadow() {
       }
       @media only screen and (min-width: 1024px) {
         :host {
-          --emotion-pictures-default-img-max-height: auto;
+            --emotion-pictures-default-img-max-height: 50vh;
         }
-
+    }
+    @media only screen and (min-width: 2000px) {
+      :host {
+          --emotion-pictures-default-img-max-height: 70vh;
       }
+  }
 
       @media only screen and (max-width: 767px) {
         :host {
-          --emotion-pictures-default-img-max-height: 20vh;
+          --emotion-pictures-default-img-max-height:20vh;
           --content-spacing-mobile: none;
           height:20vh;
           --content-width: 100%;
