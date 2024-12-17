@@ -75,7 +75,7 @@ export default class EmotionCarousel extends Shadow() {
     this.css = /* css */`
 
     :host {
-      --emotion-pictures-default-img-max-height: auto;
+      --emotion-pictures-default-img-max-height: 50vh;
       text-shadow: 1px 3px 18px black;
       --any-margin-top-first-child: var(--content-spacing);
       --content-width: 100%;
@@ -187,7 +187,10 @@ export default class EmotionCarousel extends Shadow() {
             font-size: small;
         }
         
-      @media only screen and (max-width: 1000px) {
+      @media only screen and (max-width: 1024px) {
+        :host {
+          --emotion-pictures-default-img-max-height: auto;
+        }
         .slide-description,
         .link-description{
           font-size: xx-small;
