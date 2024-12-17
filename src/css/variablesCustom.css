@@ -55,6 +55,7 @@
   --details-default-svg-color-custom: var(--color-tertiary);
   --download-box-shadow-color-custom: var(--download-color-custom);
   --download-color-custom: var(--color-tertiary);
+  --emotion-pictures-default-img-max-height: auto;
   --emotion-pictures-with-button-img-max-height: var(--emotion-pictures-default-img-max-height);
   --emotion-pictures-with-logo-img-max-height: var(--emotion-pictures-default-img-max-height);
   --emotion-pictures-with-title-img-max-height: var(--emotion-pictures-default-img-max-height);
