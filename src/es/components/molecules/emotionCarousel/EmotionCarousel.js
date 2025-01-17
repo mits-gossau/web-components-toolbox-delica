@@ -8,7 +8,7 @@ export default class EmotionCarousel extends Shadow() {
   swipes
   nextButton
 
-  constructor(options = {}, ...args) {
+  constructor (options = {}, ...args) {
     super({ hoverInit: undefined, importMetaUrl: import.meta.url, ...options }, ...args)
 
     this.yearSwiper = this.root.querySelector('.year-swiper')
@@ -20,7 +20,7 @@ export default class EmotionCarousel extends Shadow() {
     this.prevButton = this.root.querySelector('.section.left')
   }
 
-  connectedCallback() {
+  connectedCallback () {
     if (this.shouldRenderCSS()) this.renderCSS()
 
     let curSlide = 0
@@ -60,34 +60,45 @@ export default class EmotionCarousel extends Shadow() {
     let timer = setInterval(changeSlide, 10000)
   }
 
-  shouldRenderCSS() {
+  shouldRenderCSS () {
     return !this.root.querySelector(`:host > style[_css], ${this.tagName} > style[_css]`)
   }
 
-  updateSlideTransform(curSlide) {
+  updateSlideTransform (curSlide) {
     this.slides.forEach((slide, index) => {
       const offset = index - curSlide
       slide.style.transform = `translateX(${offset * 100}%)`
     })
   }
 
-  renderCSS() {
+  renderCSS () {
     this.css = /* css */`
 
     :host {
-        --emotion-pictures-default-img-max-height: 50vw;
       text-shadow: 1px 3px 18px black;
+      --img-height: 100%;
+      --picture-cover-img-max-height: none;
       --any-margin-top-first-child: var(--content-spacing);
       --content-width: 100%;
       --color: white;
-      font-size: large;
+      font-size: ;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       height:25vw;
+      max-height: var(--emotion-carousel-img-max-height, none);
       margin: 0; 
       --svg-size: 2em;
+      
+    }
+
+    :host h2{
+      font-size: var(--h1-font-size, 36px);
+    }
+
+    :host .controls{
+      font-size: 1.2em;
     }
 
     .component-container {
@@ -99,6 +110,8 @@ export default class EmotionCarousel extends Shadow() {
       position: relative;
       z-index: 2;
     }
+
+
 
         .slide {
           width: 100%;
@@ -114,6 +127,11 @@ export default class EmotionCarousel extends Shadow() {
             position: static;
             z-index: 0;
             pointer-events: none; 
+
+          }
+
+          a-emotion-pictures a-picture{
+            --picture-cover-img-max-height: none;
 
           }
           
@@ -132,6 +150,7 @@ export default class EmotionCarousel extends Shadow() {
 
           a-picture img{
             object-position: center;
+            
           }
           
           .slide-description {
@@ -140,7 +159,6 @@ export default class EmotionCarousel extends Shadow() {
             justify-content: center;
             flex-direction: column;
             position: absolute;
-            font-size: small;
             left: 30%;
             z-index: 4;
             max-width: 36%;
@@ -173,7 +191,7 @@ export default class EmotionCarousel extends Shadow() {
             justify-content: flex-end;
           }
           .section:hover{
-            --color: rgb(173, 142, 86);
+            --color: var(--color-dusty-gray, var(--color-tertiary));
           }
 
           .link-description {
@@ -186,32 +204,22 @@ export default class EmotionCarousel extends Shadow() {
             z-index: 5; 
             font-size: small;
         }
-        
-      @media only screen and (max-width: 1000px) {
-        .slide-description,
-        .link-description{
-          font-size: xx-small;
-        }
-
-      }
-      @media only screen and (min-width: 1024px) {
-        :host {
-            --emotion-pictures-default-img-max-height: 50vh;
-        }
-    }
-    @media only screen and (min-width: 2000px) {
-      :host {
-          --emotion-pictures-default-img-max-height: 70vh;
-      }
-  }
 
       @media only screen and (max-width: 767px) {
         :host {
-          --emotion-pictures-default-img-max-height:20vh;
           --content-spacing-mobile: none;
-          height:20vh;
+          height:30vh;
           --content-width: 100%;
+          --img-height-mobile: 100%;
 
+        }
+        .slide-description,
+        .link-description{
+          font-size: 0.8em;
+        }
+
+        :host h2{
+          font-size: 2em;
         }
         .title{
           width: 100%
