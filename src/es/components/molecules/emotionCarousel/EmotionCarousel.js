@@ -26,7 +26,9 @@ export default class EmotionCarousel extends Shadow() {
     let curSlide = 0
     this.updateSlideTransform(curSlide)
 
-    this.nextButton.addEventListener('click', () => {
+    this.nextButton?.addEventListener('click', () => {
+      clearInterval(timer)
+      timer = setInterval(changeSlide, 10000)
       curSlide++
 
       if (curSlide === this.slides.length) {
@@ -36,7 +38,7 @@ export default class EmotionCarousel extends Shadow() {
       this.updateSlideTransform(curSlide)
     })
 
-    this.prevButton.addEventListener('click', () => {
+    this.prevButton?.addEventListener('click', () => {
       if (curSlide === 0) {
         curSlide = this.slides.length - 1
       } else {
@@ -55,7 +57,7 @@ export default class EmotionCarousel extends Shadow() {
       this.updateSlideTransform(curSlide)
     }
 
-    setInterval(changeSlide, 10000)
+    let timer = setInterval(changeSlide, 10000)
   }
 
   shouldRenderCSS () {
@@ -73,16 +75,30 @@ export default class EmotionCarousel extends Shadow() {
     this.css = /* css */`
 
     :host {
+      text-shadow: 1px 3px 18px black;
+      --img-height: 100%;
+      --picture-cover-img-max-height: none;
+      --any-margin-top-first-child: var(--content-spacing);
       --content-width: 100%;
       --color: white;
-      font-size: large;
+      font-size: ;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height:50vh;
+      height:25vw;
+      max-height: var(--emotion-carousel-img-max-height, none);
       margin: 0; 
       --svg-size: 2em;
+      
+    }
+
+    :host h2{
+      font-size: var(--h1-font-size, 36px);
+    }
+
+    :host .controls{
+      font-size: 1.2em;
     }
 
     .component-container {
@@ -94,6 +110,8 @@ export default class EmotionCarousel extends Shadow() {
       position: relative;
       z-index: 2;
     }
+
+
 
         .slide {
           width: 100%;
@@ -109,6 +127,11 @@ export default class EmotionCarousel extends Shadow() {
             position: static;
             z-index: 0;
             pointer-events: none; 
+
+          }
+
+          a-emotion-pictures a-picture{
+            --picture-cover-img-max-height: none;
 
           }
           
@@ -127,6 +150,7 @@ export default class EmotionCarousel extends Shadow() {
 
           a-picture img{
             object-position: center;
+            
           }
           
           .slide-description {
@@ -135,7 +159,6 @@ export default class EmotionCarousel extends Shadow() {
             justify-content: center;
             flex-direction: column;
             position: absolute;
-            font-size: small;
             left: 30%;
             z-index: 4;
             max-width: 36%;
@@ -168,7 +191,7 @@ export default class EmotionCarousel extends Shadow() {
             justify-content: flex-end;
           }
           .section:hover{
-            --color: rgb(173, 142, 86);
+            --color: var(--color-dusty-gray, var(--color-tertiary));
           }
 
           .link-description {
@@ -181,21 +204,22 @@ export default class EmotionCarousel extends Shadow() {
             z-index: 5; 
             font-size: small;
         }
-        
-      @media only screen and (max-width: 1000px) {
-        .slide-description,
-        .link-description{
-          font-size: xx-small;
-        }
-
-      }
 
       @media only screen and (max-width: 767px) {
         :host {
           --content-spacing-mobile: none;
-          height:20vh;
+          height:30vh;
           --content-width: 100%;
+          --img-height-mobile: 100%;
 
+        }
+        .slide-description,
+        .link-description{
+          font-size: 0.8em;
+        }
+
+        :host h2{
+          font-size: 2em;
         }
         .title{
           width: 100%

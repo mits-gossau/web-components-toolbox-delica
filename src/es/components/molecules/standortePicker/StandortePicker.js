@@ -13,47 +13,47 @@ export default class StandortePicker extends Shadow() {
     this.css = /* css */`
 
     :host{
-      width: 100%;
-      height: 100%;
+      width: var(--standorte-picker-width, 100%);
+      height: var(--standorte-picker-height, 100%);
 
-      --display-active: flex;
+      --display-active: var(--standorte-picker-display-active, flex);
     }
     m-tabs{
-      --background-color: var(--color-secondary);
-      --color-active: var(--color-tertiary);
+      --background-color: var(--standorte-picker-background-color, var(--color-secondary));
+      --color-active: var(--standorte-picker-color-active, var(--color-tertiary));
 
     }
     m-tabs .tab-content{
-      justify-content: space-evenly;
+      justify-content: var(--standorte-picker-tab-content-justify-content, space-evenly);
 
     }
     .left-container{
-      width: 60%;
-      height: 100%;
-      padding: 3%;
+      width: var(--standorte-picker-left-container-width, 60%);
+      height: var(--standorte-picker-left-container-height, 100%);
+      padding: var(--standorte-picker-left-container-padding, 3%);
 
     }
     m-tabs section .right-container{
-      padding: 3%;
-      width: 30%;
-      border-left: 1px solid black;
+      padding: var(--standorte-picker-right-container-padding, 3%);
+      width: var(--standorte-picker-right-container-width, 30%);
+      border-left: var(--standorte-picker-right-container-border-left, 1px solid black);
 
     }
     @media only screen and (max-width: 1200px) {      
       :host{
-        width: 100%;
-        height: fit-content;
-        padding-bottom: 5%;
+        width: var(--standorte-picker-width, 100%);
+        height: var(--standorte-picker-height, fit-content);
+        padding-bottom: var(--standorte-picker-padding-bottom, 5%);
       }
 
   }
 
   @media only screen and (max-width: 768px) {      
     :host{
-      overflow: hidden;
+      overflow: var(--standorte-picker-overflow, hidden);
     }
     m-tabs{
-      --tab-justify-content: space-around;
+      --tab-justify-content: var(--standorte-picker-tab-justify-content, space-around);
 
     }
 

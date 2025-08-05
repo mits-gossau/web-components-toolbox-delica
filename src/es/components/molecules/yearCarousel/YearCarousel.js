@@ -94,7 +94,12 @@ export default class YearCarousel extends Shadow() {
             flex-direction: column;
             height: fit-content;
             margin: 0; 
-            --svg-size: 3em;
+            --svg-size: 2em;
+          }
+
+          :host a-picture{
+            --picture-cover-img-object-fit: contain;
+
           }
 
           .component-container{
@@ -112,6 +117,8 @@ export default class YearCarousel extends Shadow() {
             width: 100%;
             position: relative;
             overflow: hidden;
+            background: rgb(207 207 207);
+            border-radius: 0.5em;
           }
           
           .slide {
@@ -191,7 +198,7 @@ export default class YearCarousel extends Shadow() {
             justify-content: flex-end;
           }
           .section:hover{
-            --color: rgb(173, 142, 86);
+            --color: var(--color-tertiary, #e0b15c);
           }
 
           .swipe{
@@ -200,28 +207,28 @@ export default class YearCarousel extends Shadow() {
           
           }
           .active-year {
-            color: rgb(173, 142, 86);
+            color: var(--color-tertiary, #e0b15c);
             font-weight: bold; 
           }
 
-          @media only screen and (max-width: 1000px) {
-            :host{
+          @media only screen and (max-width: 1200px) {
+            :host a-picture{
               --svg-size: 2em;
 
+            }
+
+            .component-container{
+              height: 60vh;
             }
           }
 
           @media only screen and (max-width: 767px) {
             :host{
-              --svg-size: 2em;
-
-            }
-          }
-
-          @media only screen and (max-width: 500px) {
-            :host{
               --svg-size: 1.5em;
 
+            }
+            .carousel-container {
+              border-radius: 0.3em;
             }
           }
 
